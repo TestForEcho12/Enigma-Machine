@@ -23,14 +23,12 @@ class Rotor:
         m = (n - ord('A') + self.state - self.ring) % 26
         encode = self.wiring[m]
         encode = chr(ord(encode) - self.state + self.ring)
-        print(char, encode)
         return encode
         
     def reverse_encode(self, char):
         n = (ord(char) - ord('A') + self.state - self.ring) % 26 + ord('A')
         m = self.iwiring[chr(n)]
         encode = chr((m - self.state + self.ring) % 26 + ord('A'))
-        print(char, encode)
         return encode
     
     
@@ -43,7 +41,6 @@ class Reflector:
         n = ord(char)
         m = (n - ord('A')) % 26
         encode = self.wiring[m]
-        print(char, encode)
         return encode
     
 
